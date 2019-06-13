@@ -23,11 +23,11 @@ public class Main {
 
     private Main() {
         // initialize the adapter to persistence
-        StockTradeBookPersistence persistence = new PersistenceFileAdapter("order.csv");
+        TradeBookRepository persistence = new TradeBookFileRepoAdapter("order.csv");
 
         // initialize the business logic, and inject the adapter
         StockBrokerImpl stockBroker = new StockBrokerImpl();
-        stockBroker.setPersistence(persistence);
+        stockBroker.setTradeBookRepository(persistence);
 
         // initialize the adapter to command line, and inject the business logic
         adapter = new CommandLineAdapter();

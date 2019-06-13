@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class PersistenceFileAdapter implements StockTradeBookPersistence {
+class TradeBookFileRepoAdapter implements TradeBookRepository {
     private List<TradeBook> tradeBookList;
 
-    PersistenceFileAdapter(String filePath) {
+    TradeBookFileRepoAdapter(String filePath) {
         tradeBookList = new ArrayList<>();
         try (Scanner scanner = new Scanner(getFile(filePath))) {
             while (scanner.hasNext()){

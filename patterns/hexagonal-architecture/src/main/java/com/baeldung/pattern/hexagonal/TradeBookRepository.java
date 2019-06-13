@@ -1,6 +1,6 @@
 package com.baeldung.pattern.hexagonal;
 
-interface StockTradeBookPersistence {
+interface TradeBookRepository {
 
     boolean add(String stockCode, String action, double price, int volume);
 
